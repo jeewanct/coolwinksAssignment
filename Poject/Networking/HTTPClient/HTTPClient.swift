@@ -1,15 +1,14 @@
 //
 //  HTTPClient.swift
-//  StarTalk
+//  Poject
 //
-//  Created by jeevan tiwari on 11/02/20.
+//  Created by jeevan tiwari on 04/04/20.
 //  Copyright © 2020 jeevan tiwari. All rights reserved.
 //
-
 import Foundation
 
 class HTTPClient{
-    typealias HTTPResponse<T: Codable> = (Result<BaseResponseModel<T>, HTTPError>) -> Void
+    typealias HTTPResponse<T: Codable> = (Result<T, HTTPError>) -> Void
     private var shared: URLSessionProtocol = URLSession.shared
     
     init(_ sessionProtocol: URLSessionProtocol = URLSession.shared) {
@@ -28,8 +27,7 @@ class HTTPClient{
             }
             if let _ = response {
                 do{
-                    let jsonResponse = try JSONDecoder().decode(BaseResponseModel<T>.self, from: data ?? Data())
-                    try self.parse(jsonResponse.code, jsonResponse.msg)
+                    let jsonResponse = try JSONDecoder().decode(T.self, from: data ?? Data())
                     self.printResponse(data)
                     DispatchQueue.main.async {
                         completion(.success(jsonResponse))
@@ -50,18 +48,6 @@ class HTTPClient{
                 // let httpError = HTTPError(error.localizedDescription)
             }
         }.resume()
-    }
-    
-    func parse(_ statusCode: Int?, _ message: String?) throws{
-        guard let httpStatusCode = HTTPStatusCodes(rawValue: statusCode!) else { throw HTTPError()}
-        switch httpStatusCode {
-            case .success:
-                break
-            case .tokenInvalid, .tokenExpired:
-                UserInformation.shared.logout()
-            default:
-                throw HTTPError(message)
-        }
     }
     
     func printResponse(_ data: Data?){

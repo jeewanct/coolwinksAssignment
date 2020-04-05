@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class TechnologyModel: Codable{
+    var title:    String?
+    var subTitle: String?
+}

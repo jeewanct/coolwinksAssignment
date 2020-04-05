@@ -1,14 +1,15 @@
 //
 //  MockDataTask.swift
-//  StarTalkTests
+//  Poject
 //
-//  Created by jeevan tiwari on 13/02/20.
+//  Created by jeevan tiwari on 04/04/20.
 //  Copyright © 2020 jeevan tiwari. All rights reserved.
 //
 
 import Foundation
 
-@testable import StarTalk
+@testable import Poject
+
 class MockDataTask: URLSessionDataTaskProtocol{
     func resume() {
         

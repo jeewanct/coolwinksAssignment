@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+protocol Customize {
+    func addListener()
+    func customInit()
+}
+
+protocol CellSetup {
+    func setup()
+}

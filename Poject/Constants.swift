@@ -9,15 +9,6 @@
 import UIKit
 
 struct Constants{
-    static let SCREENBOUNDS = UIScreen.main.bounds
-    static let SCREENWIDTH = SCREENBOUNDS.width
-    static let SCREENHEIGHT = SCREENBOUNDS.height
-    static let DEVICE_ID = UIDevice.current.identifierForVendor?.uuidString ?? ""
-    static let APP_ID = "5"
-    static let MOBILE_LENGTH = 10
-    static let OTP_LENGTH = 6
-    static let CHANNEL = "iOS"
-    static let COUNTRY_CODE = "+91"
-    static let OPERATOR = "Vodafone"
-    static let OTP_TIMER_COUNT = 60
+    static let flickrAPIKey = "e449b259146e14b0d55e770fb3577436"
+    static let apiSig = "fbf57fac08884eb7f86faa5dabe8ed58"
 }

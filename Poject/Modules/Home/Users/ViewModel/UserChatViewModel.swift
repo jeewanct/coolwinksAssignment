@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class UserChatViewModel: BaseViewModel {
+    
+    var userChats: [UserModel]?
+    
+    func createView(){
+        reloadTable.value = true
+    }
+    
+    
+}

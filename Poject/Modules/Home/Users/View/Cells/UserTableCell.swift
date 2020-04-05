@@ -8,17 +8,21 @@
 
 import UIKit
 
-class UserTableCell: UITableViewCell {
-
+class UserTableCell: BaseTableCell {
+    
+    @IBOutlet weak var lblUserName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func update<T>(data: T) {
+        let userData: UserModel = data as! UserModel
+        lblUserName.text = "User\(userData.id)"
     }
-    
+}
+
+extension UserTableCell{
+    static let identifier = String(describing: UserTableCell.self)
 }

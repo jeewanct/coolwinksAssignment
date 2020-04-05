@@ -1,8 +1,8 @@
 //
-//  ActivityIndicator.swift
-//  OneGames
+//  CustomActivityIndicator.swift
+//  Poject
 //
-//  Created by jeevan tiwari on 02/04/20.
+//  Created by jeevan tiwari on 04/04/20.
 //  Copyright © 2020 jeevan tiwari. All rights reserved.
 //
 
@@ -50,18 +50,17 @@ class CustomActivityIndicator: UIView {
     lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.style = .whiteLarge
+        activityIndicator.style = .large
         activityIndicator.color = #colorLiteral(red: 0, green: 0.6784313725, blue: 0.9333333333, alpha: 1)
         activityIndicator.hidesWhenStopped = true
         return activityIndicator
     }()
     
     lazy var visualEffectView: UIVisualEffectView = {
-       // let blurEffect = UIBlurEffect(style: .extraLight)
-        let visualEffect = UIVisualEffectView()
+        let blurEffect = UIBlurEffect(style: .extraLight)
+        let visualEffect = UIVisualEffectView(effect: blurEffect)
         visualEffect.translatesAutoresizingMaskIntoConstraints = false
         visualEffect.layer.cornerRadius = 4
-        visualEffect.backgroundColor = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         visualEffect.clipsToBounds = true
         return visualEffect
     }()

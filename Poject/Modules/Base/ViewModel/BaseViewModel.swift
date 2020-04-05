@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class BaseViewModel{
+    var reloadTable:       Bindable<Bool> = Bindable(false)
+    var activityIndicator: Bindable<Bool> = Bindable(false)
+    var showHUD:           Bindable<Bool> = Bindable(false)
+}

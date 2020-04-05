@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class TechnologiesViewModel: BaseViewModel{
+    
+    var technologies: [TechnologyModel]?
+    
+    func createView(){
+        PlistData.shared.plist("TechnologyModel") { (data: [TechnologyModel]) in
+            self.technologies = data
+            self.reloadTable.value = true
+        }
+        
+    }
+}

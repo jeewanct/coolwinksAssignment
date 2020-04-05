@@ -6,4 +6,13 @@
 //  Copyright © 2020 jeevan tiwari. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class BaseCollectionCell: UICollectionViewCell{
+    
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func update<T: Codable>(data: T){}
+}

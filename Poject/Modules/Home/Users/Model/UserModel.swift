@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct UserModel: Codable{
+    var userId, id  :  Int
+    var title, body : String?
+}

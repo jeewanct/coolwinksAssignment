@@ -10,38 +10,14 @@ import Foundation
 
 extension Constants{
     struct Service{
-        static let baseUrl      = "http://1inamillion.in/"
-        static let contentManager = "ContentManager/v1/"
-        static let profilerSendOTP = "Profiler/v2/"
-        static let profilerValidateOTP = "Profiler/v1/"
+        static let baseUrl      = "http://jsonplaceholder.typicode.com/"
+        static let flickrBaseUrl = "https://www.flickr.com/"
+        static let imageBaseURL = "https://farm1.staticflickr.com/"
         static let timeInterval = 120.0
     }
 }
 
-extension Constants{
-    struct ServicePath{
-        static let sendOTP = "submitLoginOrSignUp"
-        static let otp = "sendOtp"
-        static let validateOTP = "validateOtpAndLogin"
-        static let tutorials = "getBanners"
-        static let guestUser = "guestLogin"
-    }
+extension Constants.Service{
+    static let posts = "posts"
+    static let recentUploads = "services/rest/"
 }
-
-extension Constants.ServicePath{
-    static let fetchHomePage = "fetchHomePage"
-    static let fetchMenu = "fetchMenu"
-}
-
-//MARK: My Chats
-extension Constants.ServicePath{
-    static let categories = "fetchCategories"
-    static let multiWindowGames = "fetchViewAllForMultiWindowGames"
-    static let singleWindowGames = "fetchViewAllForSingleWindowGames"
-}
-
-//MARK: My Profile
-extension Constants.ServicePath{
-    static let fetchAvatarOptions = "fetchAvatarOptions"
-}
-

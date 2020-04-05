@@ -6,4 +6,16 @@
 //  Copyright © 2020 jeevan tiwari. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+@IBDesignable
+class CircularLabel: UILabel{
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        clipsToBounds = true
+        layer.cornerRadius = frame.height / 2
+    }
+}
+
+
