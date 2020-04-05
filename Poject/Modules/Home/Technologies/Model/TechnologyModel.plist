@@ -13,7 +13,7 @@ Used for image downloading and caching.</string>
 		<key>title</key>
 		<string>Unit Testing</string>
 		<key>subTitle</key>
-		<string>Added unit testing for User list and flickr recent posts. Added Networking mocking</string>
+		<string>Added unit testing for User list and flickr recent posts. Added Network mocking</string>
 	</dict>
 	<dict>
 		<key>title</key>
